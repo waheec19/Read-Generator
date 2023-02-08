@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("../node_modules/axios");
 require('dotenv').config();
 
 const token = process.env.TOKEN;
@@ -15,4 +15,4 @@ const api = {
   }
 };
 
-export default api;
+module.exports = api;

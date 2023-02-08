@@ -1,7 +1,7 @@
-import { inquirer } from "inquirer";
-import { writeFile } from "fs";
-import generateMarkdown from "./utils/generateMarkdown";
-import api from "./utils/api";
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
+const api = require("./utils/api");
 
 
 const questions = [
@@ -68,12 +68,12 @@ function validateContributors(num)
 }
 
 function promptUser(){
-    return prompt(questions)
+    return inquirer.prompt(questions)
 }
 
 
 function writeToFile(fileName, data) {
-    writeFile(fileName, data, function(err){
+    fs.writeFile(fileName, data, function(err){
         if (err){
             console.error(err);
         }
